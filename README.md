@@ -34,5 +34,7 @@ Nesta aplicação a arquitetura foi uma arquitetura mais simples para utilizar o
 │   ├── App.jsx
 │   ├── index.jsx
 ├── package-lock.json
+├── public
+│   ├── index.html
 ├── package.json
 ├── README.md
