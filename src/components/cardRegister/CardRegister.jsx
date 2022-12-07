@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { register } from "../../APIs/Api"
 import "./style.css"
 
 export default function CardRegister() {
@@ -7,6 +8,12 @@ export default function CardRegister() {
   const [password, setPassword] = useState("")
   const [nickName, setNickName] = useState("")
   const [passwordAgain, setPasswordAgain] = useState("")
+
+  const submitButton = () => {
+    if (password === passwordAgain) {
+      register(name, email, nickName, password)
+    }
+  }
 
   return (
     <div>
@@ -54,6 +61,7 @@ export default function CardRegister() {
         </label>
           <button
             type="button"
+            onClick={ submitButton() }
           >
             Registrar
           </button>
