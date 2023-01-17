@@ -8,3 +8,10 @@ return axios.post("localhost:3333/users/register", {
     password
 })
 }
+
+export const login = (email, password) => {
+    return axios.get("localhost:3333/ysers/login", {
+        email,
+        password,
+    })
+}
