@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
+import { login } from '../../APIs/Api';
 
 export default function CardLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const submitLogin = () => {
+    login(email, password);
+  }
 
   return (
     <>
@@ -26,6 +31,7 @@ export default function CardLogin() {
         <div>
           <button
             type="button"
+            onClick={ submitLogin() }
           >
             Log in
           </button>
