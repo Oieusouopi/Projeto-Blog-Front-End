@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { register } from "../../APIs/Api"
 import "./style.css"
+import { useNavigate } from "react-router-dom"
 
 export default function CardRegister() {
   const [name, setName] = useState("")
@@ -8,10 +9,12 @@ export default function CardRegister() {
   const [password, setPassword] = useState("")
   const [nickName, setNickName] = useState("")
   const [passwordAgain, setPasswordAgain] = useState("")
+  const navigate = useNavigate()
 
   const submitButton = () => {
     if (password === passwordAgain) {
       register(name, email, nickName, password)
+      navigate("/login")      
     }
   }
 
